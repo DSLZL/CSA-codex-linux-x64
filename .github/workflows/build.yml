@@ -27,13 +27,13 @@ jobs:
   build:
     permissions:
       contents: read
-    uses: DSLZL/CSA-codex/.github/workflows/build-patched-codex-target.yml@8322bdb10926e57a2924cb37404e65ff9379d142
+    uses: DSLZL/CSA-codex/.github/workflows/build-patched-codex-target.yml@ff4f5bd1914fe0644cc840f435fa4f4d1e1746ac
     with:
       builder_repository: DSLZL/CSA-codex-linux-x64
-      cache_mode: read-write
+      cache_mode: read-only
       compat_id: ${{ inputs.compat_id }}
       request_id: ${{ inputs.request_id }}
-      retention_days: 1
+      retention_days: 7
       runner: ubuntu-24.04
       source_commit: ${{ inputs.source_commit }}
       target: x86_64-unknown-linux-musl
